@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Manage Employees</title>
+      <link rel="stylesheet" type="text/css" href="../assets/styles/manage.css">
+      <script src="assets/js/empvalid.js"></script>
+  </head>
+
+  <body>
+      <div class="box">
+        <form method="POST">
+          <input style="width: 20%; margin-left: 530px;" id="search" type="text" name="SearchID" placeholder="Search By ID" value="">
+          <input id="btnSearch" type="submit" name="SEARCH" value="Search">
+
+          <p>Employee ID</p>
+          <input type="text" id="empId" name="empId" placeholder="Enter Employee Id" value="<%= sInfo.EmpID %>" >
+          <p>Name</p>
+          <input type="text" id="empName" name="empName" placeholder="Enter Employee Name" value="<%= sInfo.name %>" >
+          <input type="text" name="empJoinDate" value="<%= sInfo.join %>" readonly>
+          <p>Added By</p>
+          <input type="submit" name="INSERT" id="INSERT" value="INSERT" <%if(srchStatus==true){%>disabled<%}%>>
+          <input type="submit" name="UPDATE" value="UPDATE" <%if(srchStatus==false){%>disabled<%}%>>
+          <input type="submit" name="DELETE" value="DELETE" <%if(srchStatus==false){%>disabled<%}%>>
+        </form>
+        <div align="right" class="table">
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>EmpId</th>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                  <% for(var i=0; i < list.length; i++){ %>
+                  <tr>
+                    <td><%= list[i].EmpID %></td>
+                    <td><%= list[i].E_NAME %></td>
+                    <td><%= list[i].DID %></td>
+                    <td><%= list[i].SAL %></td>
+                    <td><%= list[i].E_MOB %></td>
+                    <td><%= list[i].E_MAIL %></td>
+                    <td><%= list[i].JOIN_DATE %></td>
+                    <td><%= list[i].ADDED_BY %></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </body>
+</html>
