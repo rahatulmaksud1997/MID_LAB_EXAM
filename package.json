@@ -1,0 +1,11 @@
+{
+  "name": "trunk",
+  "version": "1.0.0",
+  "description": "LABTASK",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rahat",
+  "license": "ISC"
+}
