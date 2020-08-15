@@ -27,15 +27,10 @@ app.use('/login', login);
 
 app.listen(3333, function()
 {
-	console.log('_____________________________\n\tBUSINESS TOOL\nEXPRESS HTTP SERVER STARTED\nPORT NO. 3333\n_____________________________');
+	console.log('_____________________________\n\tHTTP SERVER STARTED\nPORT. 3333\n_____________________________');
 });
 
 app.get('/', function(req, res)
-{
-	res.render('home/index');
-});
-
-app.get('/login', function(req, res)
 {
 	res.render('login/index');
 });
